@@ -1,0 +1,22 @@
+.todo-container{
+    border: red dotted 1px;
+    width: 100%;   
+    
+    
+
+    
+}
+
+.todo-form{
+   
+    height: 30%;
+    margin: auto;
+    border:blue dotted 1px;
+}
+
+.items-container{
+   
+    height: 70%;
+    margin: auto;
+    border: black dotted 1px;
+}
