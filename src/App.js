@@ -19,9 +19,9 @@ function App() {
     <div className="App" style={{backgroundColor:background}}>
       <header>{wheater.getWeather()}</header>
       <main>
-        <input onClick={()=>{dispatch(backBg())}} type="button" value="<" />
+        <input className='move' onClick={()=>{dispatch(backBg())}} type="button" value="<" />
         <Todo />
-        <input onClick={()=>{dispatch(nextBg())}} type="button" value=">" />
+        <input className='move' onClick={()=>{dispatch(nextBg())}} type="button" value=">" />
       </main>
       
       <footer>{phrases.getPhrase()}</footer>  

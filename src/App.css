@@ -1,6 +1,8 @@
 html,body{
   height: 100%;
   margin: 0;
+  font-size: 100%;
+  
 }
 
 .App {
@@ -11,12 +13,12 @@ html,body{
 }
 
 header{
-  height: 20%;
+  height: 15%;
  
 }
 
 main{
-  height: 70%;
+  height: 73%;
   
   display: flex;
   justify-content:space-between;
@@ -24,15 +26,17 @@ main{
 
 }
 
-main input{
+.move{
   width: 5%;
   background-color: transparent;
+  border: transparent;
+  color: silver;
 }
 
 
 
 footer{
-  height: 10%;
+  height: 12%;
  
 }
 
