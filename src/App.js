@@ -5,6 +5,7 @@ import { Weather } from './app/components/Weather/Weather.js';
 
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
+import { Quote } from './app/components/Quote/Quote.js';
 
 function App() {
 
@@ -23,8 +24,7 @@ function App() {
         <Todo />
         <input className='move' onClick={()=>{dispatch(nextBg())}} type="button" value=">" />
       </main>
-      
-      <footer>under costruction</footer>  
+      <Quote />  
       
       
 
