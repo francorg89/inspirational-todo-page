@@ -3,6 +3,7 @@ html,body{
   margin: 0;
   font-size: 100%;
   
+  
 }
 
 *{
@@ -60,4 +61,23 @@ footer{
  
 }
 
+@media  only screen and (max-width:700px)  {
+  body{
+    border: blue dotted 2px;
+    font-size: 75%;
+  }
+  
+}
 
+@media only screen and (max-width:620px) {
+  body{
+    font-size:60%;
+  }
+  
+}
+
+@media only screen and (max-width:500px){
+  body{
+    font-size: 50%;}
+
+}

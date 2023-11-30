@@ -11,7 +11,16 @@ const todosSlice = createSlice(
     reducers:{
         addTodo:(state,action)=>{
             const newId = state.id+1
-            state.todos[newId]={id:newId,name:action.payload,completed:false};
+            let color;
+            switch(newId%5){
+                case 0: color="red"; break;
+                case 1: color="blue"; break;
+                case 2: color="green"; break;
+                case 3: color="purple"; break;
+                case 4: color="orange"; break;
+                default: break;
+    }
+            state.todos[newId]={id:newId,name:action.payload,completed:false,color};
             state.id++;      
         },
         toggleTodo:(state,action)=>{

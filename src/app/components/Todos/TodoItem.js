@@ -4,22 +4,13 @@ import { toggleTodo, deleteTodo } from "../../../features/todosSlice";
 
 
 export function TodoItem({todo}){
-    const {id, name,completed} = todo;
+    const {id, name,completed,color} = todo;
     const [visible,setVisible] = useState(false);
     const dispatch = useDispatch();
     
 
     const clase = completed? "completed" : "";
-    let color;
-    switch(id%5){
-        case 0: color="red"; break;
-        case 1: color="blue"; break;
-        case 2: color="green"; break;
-        case 3: color="purple"; break;
-        case 4: color="orange"; break;
-        default: break;
-    }
-
+    
     const handleClick = ()=>{
         
         dispatch(toggleTodo(id));
