@@ -1,5 +1,6 @@
 .todo-container{
     
+    
     font-size: 170%;
     font-family:'Times New Roman', Times, serif;
     width: 100%;
@@ -13,9 +14,8 @@
 form{
     
     height: 23%;
-    background-color:transparent;
+    background-color:rgba(255, 255, 255, 0.25);
     
-    border: gray solid 5px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -46,11 +46,12 @@ form{
 /*-----------------------------------*/
 
 .items-container{
-   
+    border:silver solid 5px;
+    background-color:rgba(255,255,255,.25);
     height: 65%;
     display: flex;
     flex-wrap: wrap;
-    border: gray solid 5px;
+    
     border-radius: 20px;
     overflow-y: scroll;
     scroll-behavior: smooth;
@@ -79,6 +80,20 @@ form{
     
 }
 
+.red{
+    background-color: rgba(255, 0, 0, 0.5);
+}
+.blue{
+    background-color:rgba(0, 0, 255, 0.4);
+}
+.green{
+    background-color: rgba(0, 128, 0, 0.54);
+}
+.orange{background:rgba(255, 166, 0, 0.525);}
+.purple{
+    background-color: rgba(137, 43, 226, 0.4);
+}
+
 .todo p{
     padding: 0 15px;
 
@@ -86,7 +101,7 @@ form{
 
 
 .todo:hover{
-    background-color: silver;
+    background-color: rgba(192, 192, 192, 0.3);
 }
 
 .completed{

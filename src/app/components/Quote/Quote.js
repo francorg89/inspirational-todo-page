@@ -20,7 +20,7 @@ export function Quote(){
 
     switch(status){
         case "pending" : return <footer> loading ...</footer>
-        case "rejected" : return <footer><p>Somethig went wrog try again !!!</p><button>Try again</button></footer>
+        case "rejected" : return <footer><p>Somethig went wrog try again !!!</p><button onClick={()=>{dispatch(getQuotes())}}>Try again</button></footer>
         case "ready": return <ShowQuote />
         default:return;
             

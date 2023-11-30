@@ -3,7 +3,7 @@ import React from "react";
 export function IconW(props){
 
     
-    const  data  = props.data;
+    const data  = props.data;
     const place = data.name;
     const country = data.sys.country;
     const temp= data.main.temp;

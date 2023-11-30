@@ -10,8 +10,7 @@ export const store = configureStore({
     todos:todosSlice,
     background:backgroundSlice,
     quotes:quotesSlice
-    
-  
+
   }
 });
 

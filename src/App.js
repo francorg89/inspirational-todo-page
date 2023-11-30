@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Todo } from "../src/app/components/Todos/Todo.js"
-import { nextBg,backBg,selectBackground } from './features/backgroundSlice.js';
+import { nextBg,backBg, loadBackgrounds, selectImage } from './features/backgroundSlice.js';
 import { Weather } from './app/components/Weather/Weather.js';
 
 import './App.css';
@@ -10,24 +10,26 @@ import { Quote } from './app/components/Quote/Quote.js';
 function App() {
 
   const dispatch = useDispatch();
-  const background= useSelector(selectBackground);
+  const image = useSelector(selectImage);
+  const next = ">"
+  const back = "<"
+  useEffect(()=>{
+    dispatch(loadBackgrounds());
+  },[dispatch]);
   
-
+  
   return (
-
-
-    
-    <div className="App" style={{backgroundColor:background}}>
-      <Weather />
-      <main>
-        <input className='move' onClick={()=>{dispatch(backBg())}} type="button" value="<" />
-        <Todo />
-        <input className='move' onClick={()=>{dispatch(nextBg())}} type="button" value=">" />
-      </main>
-      <Quote />  
+    <div className="background" style={{backgroundImage:`url(${image})`}}>
+      <div className="App" >
       
-      
-
+        <Weather />
+        <main>
+          <button className='move' onClick={()=>{dispatch(backBg())}} type="button" >{back}</button>
+          <Todo />
+          <button className='move' onClick={()=>{dispatch(nextBg())}} type="button">{next}</button> 
+        </main>
+        <Quote />  
+      </div>
     </div>
   );
 }

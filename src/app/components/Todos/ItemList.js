@@ -8,8 +8,6 @@ export function ItemList(){
 
     const todos = useSelector(selectTodos);
     
-
-   
     return (
         <div className="items-container">
             {Object.keys(todos).map(

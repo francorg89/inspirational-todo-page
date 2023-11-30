@@ -1,11 +1,22 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+
+
+export const loadBackgrounds = createAsyncThunk(
+    "backgrounds/loadBackgrounds",
+    async ()=>{
+        const url="https://api.unsplash.com/photos?client_id=5AOdirWWJnB-cQyx3iuq3cVhEijJi3bkTr4YQ6wgOvo";
+        const response = await fetch(url)
+        const jsonresponse= await response.json();
+        return jsonresponse;
+    }
+);
 
 const backgroundSlice = createSlice({
-    name:"background",
+    name:"backgrounds",
     initialState:{
         index:0,
-        images:["aliceblue","gray","silver","aqua"],
-        //current:images[index]
+        images:[],
+        loaded:false
     },
     reducers:{
         nextBg:(state)=>{
@@ -23,9 +34,31 @@ const backgroundSlice = createSlice({
             else
                 state.index--;
         }
+    },
+    extraReducers:(builder)=>{
+        builder.addCase(
+            loadBackgrounds.pending,(state,action)=>{
+                console.log("pending");
+            }
+        ).addCase(
+            loadBackgrounds.rejected,(state,action)=>{
+                console.log("REJECTED");
+            }
+        ).addCase(
+            loadBackgrounds.fulfilled,(state,action)=>{
+                state.images=action.payload;
+                state.loaded=true;
+            })
     }
 });
 
 export default backgroundSlice.reducer;
 export const {nextBg,backBg} = backgroundSlice.actions;
-export const selectBackground = (state) => state.background.images[state.background.index]; 
+export const selectImage = 
+    (state) => {
+        if(state.background.loaded){
+        const obj = state.background.images[state.background.index];
+        const image = obj.urls.small;
+        return image;    
+    }
+    }; 

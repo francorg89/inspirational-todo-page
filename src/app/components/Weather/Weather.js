@@ -3,10 +3,6 @@ import  "../../css/weather.css";
 import { IconW } from "./IconW";
 
 
-
-
-
-
 export function Weather(){
     let flag;
     const Baseurl = "https://api.openweathermap.org/data/2.5/weather?";
@@ -23,7 +19,6 @@ export function Weather(){
         navigator.geolocation.getCurrentPosition(
             async(position)=>{
                 
-
                 const lat="lat="+position.coords.latitude;
                 const long="&lon="+position.coords.longitude;
                 const units="&units=metric"
@@ -31,12 +26,8 @@ export function Weather(){
                 const response = await fetch(url);
                 const json = await response.json();
                 setData(json);
-                
-
-            }
-        );
-        
-        
+           }
+        );    
     },[]);
     
    
